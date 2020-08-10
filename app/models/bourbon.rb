@@ -1,0 +1,2 @@
+class Bourbon < ApplicationRecord
+end
