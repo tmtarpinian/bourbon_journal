@@ -1,0 +1,46 @@
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBourbons (20200810123455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "bourbons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "distillery" varchar, "proof" integer, "aged" integer, "flavornotes" varchar, "pairing" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200810123455"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-10 12:46:33.588129"], ["updated_at", "2020-08-10 12:46:33.588129"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBourbon Create (0.8ms)[0m  [1m[32mINSERT INTO "bourbons" ("name", "distillery", "proof", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "David Nicholson 1843"], ["distillery", "Lux Row Distillers"], ["proof", 100], ["created_at", "2020-08-10 12:46:41.047153"], ["updated_at", "2020-08-10 12:46:41.047153"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBourbon Create (0.7ms)[0m  [1m[32mINSERT INTO "bourbons" ("name", "distillery", "proof", "flavornotes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Larceny"], ["distillery", "Old Fitzgerald Distillery"], ["proof", 92], ["flavornotes", "vanilla"], ["created_at", "2020-08-10 12:46:41.055066"], ["updated_at", "2020-08-10 12:46:41.055066"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBourbon Create (0.4ms)[0m  [1m[32mINSERT INTO "bourbons" ("name", "distillery", "proof", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Wild Turkey 101"], ["distillery", "Wild Turkey Distilling Co."], ["proof", 101], ["created_at", "2020-08-10 12:46:41.060827"], ["updated_at", "2020-08-10 12:46:41.060827"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBourbon Create (0.5ms)[0m  [1m[32mINSERT INTO "bourbons" ("name", "distillery", "proof", "aged", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Butcher's Cut"], ["distillery", "Detroit City Distillery"], ["proof", 116], ["aged", 3], ["created_at", "2020-08-10 12:46:41.065991"], ["updated_at", "2020-08-10 12:46:41.065991"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-08-10 08:46:58 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.5ms | Allocations: 480)
+Completed 200 OK in 46ms (Views: 36.2ms | ActiveRecord: 0.0ms | Allocations: 2630)
+
+
+Started GET "/bourbons" for ::1 at 2020-08-10 08:47:04 -0400
+Processing by BourbonsController#index as HTML
+  [1m[36mBourbon Load (1.4ms)[0m  [1m[34mSELECT "bourbons".* FROM "bourbons"[0m
+  ↳ app/controllers/bourbons_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 29.6ms | ActiveRecord: 3.3ms | Allocations: 8424)
+
+

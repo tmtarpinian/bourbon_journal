@@ -4,6 +4,7 @@ class CreateBourbons < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :distillery
       t.integer :proof
+      t.integer :aged
       t.string :flavornotes
       t.string :pairing
 
