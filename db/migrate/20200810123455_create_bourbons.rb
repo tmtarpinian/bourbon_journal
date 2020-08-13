@@ -7,7 +7,7 @@ class CreateBourbons < ActiveRecord::Migration[6.0]
       t.integer :aged
       t.string :flavornotes
       t.string :pairing
-      #t.belongs_to :category, index: true, foreign_key: true
+      t.belongs_to :category, index: true, foreign_key: true
 
       t.timestamps
     end

@@ -10,7 +10,7 @@ class BourbonsController < ApplicationController
 
   # GET /bourbons/1
   def show
-    render json: @bourbon
+    render json: bourbon
   end
 
   # POST /bourbons
@@ -46,6 +46,6 @@ class BourbonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bourbon_params
-      params.require(:bourbon).permit(:name, :distillery, :proof, :flavornotes, :pairing)
+      params.require(:bourbon).permit(:name, :distillery, :proof, :aged, :flavornotes, :pairing, :category_id)
     end
 end

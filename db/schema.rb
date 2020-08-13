@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2020_08_12_022656) do
     t.integer "aged"
     t.string "flavornotes"
     t.string "pairing"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_bourbons_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -29,4 +31,5 @@ ActiveRecord::Schema.define(version: 2020_08_12_022656) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bourbons", "categories"
 end
