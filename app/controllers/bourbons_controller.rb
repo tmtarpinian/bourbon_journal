@@ -15,6 +15,7 @@ class BourbonsController < ApplicationController
 
   # POST /bourbons
   def create
+    binding.pry
     @bourbon = Bourbon.new(bourbon_params)
 
     if @bourbon.save
